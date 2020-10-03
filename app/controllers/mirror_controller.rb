@@ -2,8 +2,8 @@ class MirrorController < ApplicationController
   def index
       @weather = get_weather
       unless @weather.nil?
-          @max_temp = @weather['main']["temp_min"]
-          @min_temp = @weather['main']["temp_max"]
+          @max_temp = @weather['main']["temp_max"]
+          @min_temp = @weather['main']["temp_min"]
           @temp = @weather['main']["temp"]
           @feels_like = @weather['main']["feels_like"]
           @image = @weather['weather'].first['icon']
