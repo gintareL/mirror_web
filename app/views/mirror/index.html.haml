@@ -1,7 +1,17 @@
-Spiegel:
+%p.text-right.mb-5#Uhr{:style => "font-size:300%;font-weight:bold"}
 
-%p= "Max Temperatur: #{@max_temp}°C"
-%p= "Min Temperatur: #{@min_temp}°C"
-%p= "Temperatur: #{@temp}°C"
-%p= "Gefühlt: #{@feels_like}°C"
-= image_tag "#{@image}.png"
+.container.border.border-white.mb-5
+  .mt-3.ml-3.mr-2.mb-3
+    .row
+      .col.text-center
+        = image_tag "#{@image}.png"
+      .col.temp.mt-5.text-center
+        %h1.temp= "#{@temp}°C"
+    .row
+      .col.text-center
+        %h3= "#{@min_temp}°C"
+      .col.text-center
+        %h3= "#{@max_temp}°C"
+      .col.text-center
+        %h3= "#{@feels_like}°C"
+
