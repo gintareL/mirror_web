@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Spiegel" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "About Sharks" %>">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="body">
+<i class="fa fa-camera-retro"></i>
+<div class="container mt-5">
+  <%= yield %>
+</div>
+
+</body>
+</html>
