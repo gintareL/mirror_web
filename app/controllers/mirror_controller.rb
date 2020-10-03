@@ -26,8 +26,9 @@ class MirrorController < ApplicationController
   end
   
   def get_weather
+    api_key = Rails.application.credentials.api_key
     request_api(
-      "http://api.openweathermap.org/data/2.5/weather?q=Meersburg&exclude=daily&units=metric&appid=082a03e1732d575e462eddb2dc705497"
+      "http://api.openweathermap.org/data/2.5/weather?q=Meersburg&exclude=daily&units=metric&appid=#{api_key}"
     )
   end
 end
