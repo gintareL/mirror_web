@@ -8,7 +8,17 @@
 }
 
 .temp{
-  font-size: 250%;
+  font-size: 300%;
+}
+
+.col {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  clear: both;
 }
 
 

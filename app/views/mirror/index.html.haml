@@ -3,15 +3,14 @@
 .container.border.border-white.mb-5
   .mt-3.ml-3.mr-2.mb-3
     .row
-      .col.text-center
+      .col
+        %p
+      .col.text-right
         = image_tag "#{@image}.png"
-      .col.temp.mt-5.text-center
-        %h1.temp= "#{@temp}°C"
-    .row
-      .col.text-center
-        %h3= "#{@min_temp}°C"
-      .col.text-center
-        %h3= "#{@max_temp}°C"
-      .col.text-center
-        %h3= "#{@feels_like}°C"
+      .col.temp.text-right
+        %h1.temp.text-right= "#{@temp}°C"
+      .col
+        %h3.text-right= "MIN: #{@min_temp}°C"
+        %h3.text-right= "MAX: #{@max_temp}°C"
+        %h3.text-right= "Gef. #{@feels_like}°C"
 
