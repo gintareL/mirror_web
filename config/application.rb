@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module MirrorWeb
   class Application < Rails::Application
+    config.assets.paths << Rails.root.join("vendor", "assets", "bootstrap", "fonts")
+    config.assets.precompile += %w( *.eot *.svg *.ttf *.woff *.woff2 )
+    config.assets.enabled = false
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 

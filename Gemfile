@@ -10,8 +10,12 @@ gem 'sqlite3'
 gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'popper_js'
+gem 'uglifier'
+gem 'jquery-rails'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem 'webpacker'
+#gem 'webpacker'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -23,7 +27,7 @@ gem 'haml-rails'
 # gem 'redis'
 # Use Active Model has_secure_password
 # gem 'bcrypt'
-
+gem 'rails_12factor'
 # Use Active Storage variant
 # gem 'image_processing'
 
