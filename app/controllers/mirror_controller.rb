@@ -13,7 +13,6 @@ class MirrorController < ApplicationController
       
       end
 
-    authorize
   end
   
   private
