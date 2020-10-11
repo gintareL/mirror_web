@@ -14,6 +14,7 @@ gem 'bootstrap-sass'
 gem 'popper_js'
 gem 'uglifier'
 gem 'jquery-rails'
+gem 'google-api-client', require: 'google/apis/calendar_v3'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
