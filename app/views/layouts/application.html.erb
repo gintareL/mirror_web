@@ -22,7 +22,7 @@
       var Vorsek = ((Sekunden < 10) ? ":0" : ":");
       var Datum = Vortag + Tag + Vormon + Monat + "." + Jahr;
       var Uhrzeit = Vorstd + Stunden + Vormin + Minuten + Vorsek + Sekunden;
-      document.all.Uhr.innerHTML = Uhrzeit + "<br>" + Datum + " (" + Wochentagname[WoTag] + ")";
+      document.all.Uhr.innerHTML =  Wochentagname[WoTag] + "<br>" + Datum + "<br>" + Uhrzeit ;
       window.setTimeout("ZeitAnzeigen()", 1000);
     }
 </script>
