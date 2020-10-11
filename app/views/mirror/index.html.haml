@@ -1,19 +1,26 @@
-%p.text-right.mb-5#Uhr{:style => "font-size:300%;font-weight:bold"}
+%script{:language => "JScript", :type => "text/jscript"}
+  window.setTimeout("ZeitAnzeigen()", 1000);
 
-%div
-  %div
+.row
+  .col-7
+    .pt-5.pl-3
+      %h2= @word.lt
+      %h2= @word.de
+  .col-4
+    %p.text-right#Uhr{:style => "font-size:300%;font-weight:bold"}
+
+%div.border.border-white
+  %div.pt-2
     .row
       .col-4.text-right
         = image_tag "#{@image}.png"
       .col-4.temp.text-right
         %h1.temp.text-right= "#{@temp}°C"
-      .col-3
+      .col-3.pt-4
         %h3.text-right= "MIN: #{@min_temp}°C"
         %h3.text-right= "MAX: #{@max_temp}°C"
         %h3.text-right= "Gef. #{@feels_like}°C"
-  %div
-    = @word.lt
-    = @word.de
+
 
 
 

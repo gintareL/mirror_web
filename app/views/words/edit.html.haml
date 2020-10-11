@@ -1,0 +1,10 @@
+
+= form_tag :word, method: :patch do
+  .form-group
+    = label_tag :lt, 'litauisch'
+    = text_field_tag :lt, @word.lt, class: 'form-control'
+  .form-group
+    = label_tag :de, 'deutsch'
+    = text_field_tag :de, @word.de, class: 'form-control'
+  = submit_tag 'speichern', class: 'btn btn-primary'
+

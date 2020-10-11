@@ -1,0 +1,13 @@
+= link_to 'Wort hinzufügen', new_word_path, class: 'mb-5 btn btn-info'
+%table.table
+  %thead
+    %th litauisch
+    %th deutsch
+    %th
+  %tbody
+    - @words.each do |word|
+      %tr
+        %td= word.lt
+        %td= word.de
+        %td
+          =link_to 'ändern', edit_word_path(word)

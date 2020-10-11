@@ -1,6 +1,6 @@
 class MirrorController < ApplicationController
   def index
-    @word = Word.first
+    @word = Word.find(rand(1..Word.maximum(:id)))
       @weather = get_weather
       unless @weather.nil?
           @max_temp = @weather['main']["temp_max"].to_i
