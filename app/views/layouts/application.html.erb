@@ -23,7 +23,7 @@
       var Datum = Vortag + Tag + Vormon + Monat + "." + Jahr;
       var Uhrzeit = Vorstd + Stunden + Vormin + Minuten + Vorsek + Sekunden;
       document.all.Uhr.innerHTML = Uhrzeit + "<br>" + Datum + " (" + Wochentagname[WoTag] + ")";
-
+      window.setTimeout("ZeitAnzeigen()", 1000);
     }
 </script>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "About Sharks" %>">
