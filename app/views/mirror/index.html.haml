@@ -2,24 +2,27 @@
   window.setTimeout("ZeitAnzeigen()", 1000);
 
 .row
-  .col-7
+  .col-5
     .pt-5.pl-3
       %h2= @word.lt
       %h2= @word.de
-  .col-4
-    %p.text-right#Uhr{:style => "font-size:300%;font-weight:bold"}
+  .col-6
+    .text-right#Uhr{:style => "font-size:270%;font-weight:bold"}
 
 %div
   %div.pt-2
     .row
-      .col-4.text-right
+      .col.text-center
         = image_tag "#{@image}.png"
-      .col-4.temp.text-right
+      .col.mt-3.temp.text-center
         %h1.temp.text-right= "#{@temp}°C"
-      .col-3.pt-4
-        %h3.text-right= "MIN: #{@min_temp}°C"
-        %h3.text-right= "MAX: #{@max_temp}°C"
-        %h3.text-right= "Gef. #{@feels_like}°C"
+    .row
+      .col
+        %h3.text-center= "MIN: #{@min_temp}°C"
+      .col
+        %h3.text-center= "MAX: #{@max_temp}°C"
+      .col
+        %h3.text-center= "Gef. #{@feels_like}°C"
 
 
 
