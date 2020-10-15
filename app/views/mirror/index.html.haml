@@ -2,29 +2,45 @@
   window.setTimeout("ZeitAnzeigen()", 1000);
 
 .row
-  .col-5
-    .pt-5.pl-3
-      %h2= @word.lt
-      %h2= @word.de
-  .col-6
-    .text-right#Uhr{:style => "font-size:270%;font-weight:bold"}
+  .col
+    = image_tag("#{@image}.png", class:'mt-3', style: "width: 100%")
+  .col
+    %h1.temp.text-left.mt-3= "#{@temp}°C"
+  .col
 
-%div
-  %div.pt-2
-    .row
-      .col.text-center
-        = image_tag "#{@image}.png"
-      .col.mt-3.temp.text-center
-        %h1.temp.text-right= "#{@temp}°C"
-    .row
-      .col
-        %h3.text-center= "MIN: #{@min_temp}°C"
-      .col
-        %h3.text-center= "MAX: #{@max_temp}°C"
-      .col
-        %h3.text-center= "Gef. #{@feels_like}°C"
-
-
-
-
+  .col
+    %h1.text-right#Uhr{:style => "font-size:300%;font-weight:bold"}
+    %h2.text-right= DateTime.now.strftime('%d.%m.%Y')
+    %h2.text-right= ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'][DateTime.now.wday-1]
+    %h2.text-right= ['Pirmadienis', 'Antradienis', 'Trečiadienis', 'Ketvirtadienis', 'Penktadienis', 'Šeštadienis', 'Sekmadienis'][DateTime.now.wday-1]
+.row
+  .col
+    %h4= "MIN: #{@min_temp}°C"
+  .col
+    %h4= "MAX: #{@max_temp}°C"
+  .col
+    %h4= "Gef. #{@feels_like}°C"
+  .col
+  .col
+%div.mt-5
+  .row
+    .col
+      %div.mt-5
+        %h2= @word.lt
+      %div.mt-3
+        %h2= @word.de
+    .col
+      %h3 Deutschland
+      .mt-2
+        - @news_german['articles'].first(5).each do |article|
+          %h4= article['title']
+          %p= article['content']
+          %p= "(#{Date.parse article['publishedAt']})"
+    .col
+      %h3 Wirtschaft
+      .mt-2
+        - @news_economics['articles'].first(5).each do |article|
+          %h4= article['title']
+          %p= article['content']
+          %p= "(#{article['publishedAt']})"
 

@@ -61,3 +61,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'forecast_io'
 gem 'excon'
+#gem 'oauth'
+gem 'google-api-client'

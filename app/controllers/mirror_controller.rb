@@ -12,7 +12,12 @@ class MirrorController < ApplicationController
       else
       
       end
+    @news_german = get_news('Deutschland')
+    #@news_lithuania = get_news('Litauen')
+    @news_economics = get_news('Wirtschaft')
 
+
+# %iframe{:frameborder => "0", :height => "600", :scrolling => "no", :src => "https://calendar.google.com/calendar/embed?src=gintare.lideikyte%40googlemail.com&ctz=Europe%2FBerlin", :style => "border: 0", :width => "800"}
   end
   
   private
@@ -36,12 +41,13 @@ class MirrorController < ApplicationController
     )
   end
 
-  def create_service_auth
-    #create service auth
-    @service = Google::Apis::CalendarV3::CalendarService.new
-    @service.authorization = token.google_secret.to_authorization
-    return unless token.expired?
+  require 'net/http'
+  def get_news(search)
+    api_key = Rails.application.credentials.api_key_news
+    date = DateTime.now.strftime('%Y-%m-%d')
+    uri = URI("http://newsapi.org/v2/everything?q=#{search}&from=#{date}&sortBy=publishedAt&apiKey=#{api_key}")
+    res = Net::HTTP.get_response(uri)
 
-    new_access_token = @service.authorization.refresh! #refresh access_token
+    JSON.parse(res.body)
   end
 end
